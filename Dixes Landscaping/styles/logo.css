@@ -1,0 +1,51 @@
+:root {
+    --work-gap: 0px;
+}
+
+h2.title {
+    display: inline;
+    position: relative;
+    transition: transform 0.4s ease-in-out, opacity 0.1s ease;
+}
+
+h2.title .letter-first,
+h2.title .letter-second {
+    display: inline-block;
+}
+
+h2.title .word-first,
+h2.title .word-second {
+    position: absolute;
+    top: 0;
+    opacity: 0;
+    transition: transform 0.4s, opacity 0.4s;
+    width: max-content;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+h2.title:hover .letter-first {
+    transform: translateX(-100%);
+    opacity: 0;
+}
+
+h2.title:hover .letter-second {
+    transform: translateX(100%);
+    opacity: 0;
+}
+
+h2.title:hover .word-first {
+    opacity: 1;
+}
+
+h2.title:hover .word-second {
+    transform: translateX(calc(27.5% - var(--work-gap) / 2));
+    opacity: 1;
+}
+
+.button-styled {
+    padding: 20px;
+    border: 0;
+    border: 0px solid;
+    border-radius: 100px;
+}

@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dixes Landscaping</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          container: {
+            center: "true",
+          },
+          extend: {
+            screen: {
+              'landscape-sm': {'raw': '(orientation: landscape) and (min-width: 640px)'},
+              'landscape-md': {'raw': '(orientation: landscape) and (min-width: 768px)'},
+              'landscape-lg': {'raw': '(orientation: landscape) and (min-width: 1024px)'},
+              'landscape-xl': {'raw': '(orientation: landscape) and (min-width: 1280px)'},
+            },
+          },
+        },
+      };
+    </script>
+    <link rel="stylesheet" href="styles/logo.css">
+    <style type="text/tailwindcss">
+      @layer base {
+        * {
+          -ms-overflow-style: none;
+          scrollbar-width: none;
+          @apply scroll-smooth;
+        } *::-webkit-scrollbar {
+          display: none;
+        }
+        body {
+          -ms-overflow-style: none;
+          scrollbar-width: none;
+          @apply box-border scroll-smooth overflow-y-scroll overflow-x-hidden;
+        } body::-webkit-scrollbar {
+          display: none;
+        }
+
+        h1 {
+          @apply sm:text-5xl text-4xl font-bold mb-16;
+        }
+
+        h2 {
+          @apply sm:text-xl text-lg font-semibold mb-4;
+        }
+
+        p {
+          @apply sm:text-base text-sm;
+        }
+
+        a {
+          @apply text-sky-600 sm:text-base text-sm font-semibold transition duration-500;
+        }
+        a:hover {
+          @apply text-purple-500;
+        }
+
+        button {
+          @apply bg-transparent rounded-md px-4 py-2 border-slate-800 border-2 shadow-none transition duration-500 backdrop-blur-sm;
+        }
+        button:hover {
+          @apply scale-110 shadow-lg shadow-slate-700/50 border-black backdrop-blur;
+        }
+
+        input, input[type=submit], textarea {
+          @apply px-3 py-4 border-2 bg-slate-200/40 border-slate-300/50 rounded-md transition text-slate-500 duration-500;
+        }
+        input[type=submit] {
+          @apply text-slate-300 bg-slate-800/80;
+        }
+        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+          -webkit-appearance: none;
+        }
+        input::placeholder, textarea::placeholder {
+          @apply text-slate-500;
+        }
+        input:hover, textarea:hover {
+          @apply shadow-md shadow-slate-400/50 bg-slate-200/70 border-slate-300;
+        }
+        input:focus, textarea:focus, input[type=submit]:hover {
+          @apply outline-none border-2 bg-slate-200 border-slate-400/50 text-slate-900 placeholder:text-slate-900 shadow-lg shadow-slate-500;
+        }
+
+        /* Header */
+        header {
+          scroll-snap-align: start;
+          scroll-snap-stop: always;
+          background-image: url(images/projects/BackyardWithFence.jpg);
+          @apply bg-cover bg-no-repeat h-dvh lg:bg-center md:bg-left bg-right;
+        }
+        .header-overview a {
+          @apply text-black transition duration-500 hover:scale-125;
+        }
+        .header-overview .header-socials {
+          @apply sm:top-[inherit] -top-80 ;
+        }
+        .header-socials a {
+          @apply grayscale transition duration-500;
+        } 
+        .header-socials a:hover {
+          @apply grayscale-0;
+        }
+        #menuToggle div {
+          @apply sm:w-8 sm:h-1 w-6 h-0.5 bg-slate-900 transition duration-500 rounded;
+        } .change .bar1:sm {
+          transform: translate(0, 10px) rotate(-45deg);
+        } .change .bar2:sm {
+          @apply opacity-0;
+        } .change .bar3:sm {
+          transform: translate(0, -10px) rotate(45deg);
+        } .change .bar1 {
+          transform: translate(0, 8px) rotate(-45deg);
+        } .change .bar2 {
+          @apply opacity-0;
+        } .change .bar3 {
+          transform: translate(0, -8px) rotate(45deg);
+        }
+      }
+
+      /* About */
+
+      /* Services */
+
+      /* Contact-Us */
+      @media screen and (min-width: 420px) and (max-width: 640px) {
+        #contact-us form {
+          @apply grid-cols-2;
+        } #contact-us input[type=submit], #contact-us input[type=number], #contact-us input[type=email], #contact-us textarea {
+          @apply col-span-2
+        }
+      }
+
+      /* Footer */
+      footer h2 {
+        @apply text-center;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="h-full grid grid-rows-4">
+        <div class="bg-white/80 sm:max-h-16 sm:min-h-16 min-h-12 max-h-12 h-full row-start-1 row-end-1 flex align-middle z-20 sm:border-none box-content">
+          <div id="headerContent" class="grid grid-cols-4 px-5 sm:container w-full box-content">
+
+            <div class="sm:col-span-1 col-span-3 my-auto"><a href="#contact-us" class="hover:text-black text-black">
+              <h2 class="title" id="logo-header">
+                <span class="letter-first"><b>D</b></span>
+                <span class="letter-second"><b>L</b></span>
+                <span class="word-first"><b>D</b>ixes</span>
+                <span class="word-second"><b>L</b>andscaping</span>
+              </h2>
+            </a></div>
+
+            <div id="headerOverview" class="sm:col-span-2 sm:flex sm:justify-center sm:flex-row sm:m-auto md:gap-8 sm:gap-6 header-overview hidden">
+              <a href="#about">About</a>
+              <p class="sm:inline hidden">|</p>
+              <a href="#services">Services</a>
+              <p class="sm:inline hidden">|</p>
+              <a href="#contact-us">Contact-Us</a>
+            </div>
+
+            <div id="headerSocials" class="sm:col-span-1 sm:flex sm:justify-end sm:my-auto header-socials sm:gap-3 sm:pt-0 sm:pb-0 hidden">
+              <a href="#" class="icon-instagram">
+                <img src="images/svg/instagram.svg" alt="">
+              </a>
+              <a href="#">
+                <img src="images/svg/facebook.svg" alt="Facebook"/>
+              </a>
+            </div>
+
+            <div class="sm:hidden col-span-1 flex justify-end">
+              <div id="menuToggle" class="my-auto scale-75 cursor-pointer" onclick="toggleMenu(this)">
+                <div class="bar1 mb-1.5"></div>
+                <div class="bar2 mb-1.5"></div>
+                <div class="bar3"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div id="headerResponsive" class="sm:hidden flex flex-col sm:static absolute mt-12 gap-2 left-0 p-5 w-full -top-72 opacity-0 z-10 duration-500 bg-white backdrop-blur-sm bg-opacity-50">
+          <a href="#about">About</a>
+          <a href="#services">Services</a>
+          <a href="#contact-us">Contact-Us</a>
+
+          <div class="flex flex-row">
+            <a href="#" class="icon-facebook">
+              <img src="images/svg/facebook.svg" alt="Facebook"/>
+            </a>
+            <a href="#" class="icon-instagram">
+              <img src="images/svg/instagram.svg" alt="Instagram">
+            </a>
+          </div>
+        </div>
+
+        <div class="max-h-full h-full row-start-3 sm:row-start-6 sm:container sm:px-0 px-5 py-12">
+          <h1 class="mb-2">Welcome to Dixes Landscaping</h1>
+          <h2 class="mb-7">Specialised in executing dreams since 2015</h2>
+          <a href="#about" class="text-black hover:text-black"><button><p>Learn more &rarr;</p></button></a>
+        </div>
+      </div>
+    </header>
+
+
+    <div class="about bg-gradient-to-b from-slate-400 to-slate-200" id="about">
+      <div class="sm:container text-center px-5 py-20">
+        <h1>About The Company</h1>
+        <div class="mb-8">
+          <h2>Paragraph 1</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga esse mollitia, dolorum neque, veritatis in eligendi fugiat facilis sequi veniam, iure obcaecati ea animi praesentium nostrum. Corrupti excepturi dolor dolore!
+          Exercitationem, eligendi aliquam adipisci perferendis tempora facilis cumque atque labore veniam alias recusandae aspernatur ea ut doloremque itaque non error blanditiis dolorum, dolores, officiis dolore corrupti ratione accusamus? Dolorem, dolor?</p>
+        </div>
+        <div class="mb-8">
+          <h2>Paragraph 2</h2>
+          <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ea, inventore amet rem optio alias officia asperiores assumenda veniam et corrupti, nostrum voluptates cum officiis. Accusamus laborum debitis eius. In, sint.</p>
+        </div>
+        <div>
+          <h2>Paragraph 3</h2>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde ex quaerat odit consectetur cupiditate deleniti fuga accusamus officiis quidem, nesciunt sit explicabo vero, inventore expedita! Placeat, explicabo? Nam, quis asperiores.
+          Voluptatibus numquam nihil non recusandae. Libero assumenda atque in magnam voluptatum ut rerum, ipsum sint quam cumque nulla? Consequatur aliquid corrupti provident adipisci similique amet, labore quos corporis. Mollitia, et.</p>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="services bg-gradient-to-b from-slate-200 to-slate-100" id="services">
+      <div class="sm:container px-5 py-20 text-center">
+        <div class="mb-20">
+          <h1>Our Services</h1>
+          <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Necessitatibus provident neque soluta, illum, est ipsum, temporibus officia quisquam animi dolorem a? Aut sit officiis assumenda deserunt, deleniti exercitationem expedita perspiciatis.
+          Sequi, aliquam! Distinctio pariatur exercitationem obcaecati? Consectetur omnis at nisi porro doloribus atque ut tempore facere quisquam dolorem, quas nulla suscipit! Sapiente corporis molestias voluptate maiores excepturi? Doloribus, ex aspernatur?</p>
+        </div>
+        <div class="grid sm:grid-rows-2 sm:grid-cols-2 grid-cols-1">
+          <div class="sm:border-r-[1px] sm:border-b-[1px] flex flex-col justify-center p-5">
+            <img class="m-auto mb-2 h-16 w-16" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAAsTAAALEwEAmpwYAAABOklEQVR4nO2WMUoDQRSGP9AuCaYwYJGI5AQiXsAogqBdvIa2HsEzBKyCRdoExFuIhTZa6gVERJtMWJjAMhDzXnB3R+Z98Hcfb95jZmcWDMMw/hN1YD0iX8UZ8AU8AK0IfBUnwDfgfJ6BrQp9FafAT674PI/AZgW+iqMFxfOL1Ev01Qx/KT7PYYm+mlvBAscl+mpsAGwHSO8IrQGXwDXwJFhg5N2i/Qvf21J6gqJV5UAyQAOYRNCsCzIGatJjtBtBwy5I1hPJDNABboBXQeF77xbtd0jlGs1jA2A7gB0hZx8xdguldY1uA+8R/Dq4IG/S13gfmEbQsAuS9bQn3YXzCBp2QfpJ/Y22gQHwIih8592i/Tap3EJ5bAAq3oGrJcU/gR2F/+HfmVX9lcgej+6CNJX+xh/4hmEYxMMM5Z/EyFQpgtAAAAAASUVORK5CYII=">
+            <div>
+              <h2>Fencing</h2>
+              <p></p>
+            </div>
+          </div>
+          <div class="sm:border-b-[1px] sm:border-l-[1px] flex flex-col justify-center p-5">
+            <img class="m-auto mb-4 h-16 w-16" src="images/icons/pergola.png">
+            <div>
+              <h2>Decking & Pergola</h2>
+              <p></p>
+            </div>
+          </div>
+          <div class="sm:border-t-[1px] sm:border-r-[1px] flex flex-col justify-center p-5">
+            <img class="m-auto mb-4 h-16 w-16" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAAE3klEQVR4nO2a24vVVRTHP+OoM17IGZ0ms9LulJfpgn9CkQpTGr2UBUGUPdVMPfQQpBARZi/VUPRST5HUS2Z3JEaILK28PNSkU1FeKKx5CJpRx/HEgu+GxZk5v9/e+5wzSfiFwznwW9+192/vtdZea+0DF/D/RQdwJ/ACsBP4ATgJjOljv78H3pdML7CA8wRtwEbgE+AsUEn8GOdj4D7pmna0A08Ax92kTgGDwGZgA7ACWCTZdv1eCdwtmd3Aacc/BvRJdlqwFhh2E/gW2AR0ZujqFPc7p+8IcAdNhK3Uq25AG3xNg3S3aIEOOP2vNMPcLgG+0QCjwONAa6MHAWYC/QoONtZeoLtRyq/UdpviIWBVifx1wDPALuCEfOcfRbGXgGURY94EHNaYhzWHuncivMRXctgie38TmCiJVH8DDwAXlYzdBXztXqa7Hp8I5rQHmF8ge6lWPEz0Ddn8DcBcfSxiPe/C9Jh2yJ7Vwnz3MntzfeY1Z06LShx10EWwpSV6H9S5c0acL0om2OXMbCD1JdY5xy7zibske7LkhauxUmeHcZ8qkb3ZBYDo0DwH+EmkxyLk35KsHZCp6BX31wjZfucvUSb2pDsnYkLsX5K/hnS0aCeNvyQiNB+UrIX/Ugc/nrCF85yD5+Jz6bg9weSPle3K/RK0aBWDKyR/lHzslA4zs5gdDOnMvUWCn0no4chJdLsVykUYMzbdeVTyHxUdaGd1ElttEYNWHYBntFo5COdPT6T8QmXN47XqmfVSaDabgt/Eu4x0zNMinFa0jMXuInN8UQ8tT0rBe+LZeZKK28T9MpG3RTyrNCfhg8wJPSeefafiWXEtVUnBBvGsbJ6EkAbcmKBwhiuyniYdYWWHpSsWK1z6NAl/6mFKmrFEnBHyMSIdlnjGosulRZMQ6ufZCQpnKx+bSIh01ZFyQjpmJfDaXJ+gIS+CuiAV+djqBN5q55c1z4ScFwmmZXE6BbcAf4i7NYG3VZzfpSMFhaYVnN2KoVTcKq41D2IREsDUlzAsL3L23PCLIs5R8a0yLMNal77nZATrxbc8rWEHYkCf+D+XOH6HZCri5GBz0YGYm6IEzHL19ZRbLgy5GjwlUnkMFqUoOUljrbTeQmothC6LyeZgYVnS6FPqRzIHmSv+uQKZc5Ip6p4UYVNMyA6FlRUvOVjgWj21cEoyOVcKLa6wsg5+Yal7IrHQ8bhWXDuTaiGcVyabinWxpa5vPhxQwR+Ly9WNrCi1r4UdrulnnFjMBA7FNh+q20Ex4XGVGmejLvwWOfJSF35Hxe1pRjvIb+FYjUG6tSr7XE/XotH2yBTHZN6u6hPv12QX12hqJzfoqlumPyq3CR2/7Qp9YQIjWlWrEVJhnJddb6yiI+BdpT1o7CO5LdOpmtgDbgXHVZ3d06DLmDZdye1wizShi6U99TaxDRdrR7z5vANcT/OwDHi9ateHdcVRF652zv9LQtumHvS4gGAvcVWjFC/WlUFFt0/9Tbp6a1UzfNSZU907MZXPhAAQTv9G3r5aar/f6R9o9t37VNfTD2Ummh3iVl9Pr2GaMEcmENKZijqGu9Ti6VVbqVNF1wz9Xq5nWyQbbq0qugXom84/DHi0K9H8tM6/cGz8r/7CUctMrEzeBnyoAmpEYXRcv4f0bJtkc+ueC+B8x78fHcKd4U6+1gAAAABJRU5ErkJggg==">
+            <div>
+              <h2>Lawn Mowing</h2>
+              <p></p>
+            </div>
+          </div>
+          <div class="sm:border-t-[1px] sm:border-l-[1px] flex flex-col justify-center p-5">
+            <img class="m-auto mb-4 h-16 w-16" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAAE3klEQVR4nO2a24vVVRTHP+OoM17IGZ0ms9LulJfpgn9CkQpTGr2UBUGUPdVMPfQQpBARZi/VUPRST5HUS2Z3JEaILK28PNSkU1FeKKx5CJpRx/HEgu+GxZk5v9/e+5wzSfiFwznwW9+192/vtdZea+0DF/D/RQdwJ/ACsBP4ATgJjOljv78H3pdML7CA8wRtwEbgE+AsUEn8GOdj4D7pmna0A08Ax92kTgGDwGZgA7ACWCTZdv1eCdwtmd3Aacc/BvRJdlqwFhh2E/gW2AR0ZujqFPc7p+8IcAdNhK3Uq25AG3xNg3S3aIEOOP2vNMPcLgG+0QCjwONAa6MHAWYC/QoONtZeoLtRyq/UdpviIWBVifx1wDPALuCEfOcfRbGXgGURY94EHNaYhzWHuncivMRXctgie38TmCiJVH8DDwAXlYzdBXztXqa7Hp8I5rQHmF8ge6lWPEz0Ddn8DcBcfSxiPe/C9Jh2yJ7Vwnz3MntzfeY1Z06LShx10EWwpSV6H9S5c0acL0om2OXMbCD1JdY5xy7zibske7LkhauxUmeHcZ8qkb3ZBYDo0DwH+EmkxyLk35KsHZCp6BX31wjZfucvUSb2pDsnYkLsX5K/hnS0aCeNvyQiNB+UrIX/Ugc/nrCF85yD5+Jz6bg9weSPle3K/RK0aBWDKyR/lHzslA4zs5gdDOnMvUWCn0no4chJdLsVykUYMzbdeVTyHxUdaGd1ElttEYNWHYBntFo5COdPT6T8QmXN47XqmfVSaDabgt/Eu4x0zNMinFa0jMXuInN8UQ8tT0rBe+LZeZKK28T9MpG3RTyrNCfhg8wJPSeefafiWXEtVUnBBvGsbJ6EkAbcmKBwhiuyniYdYWWHpSsWK1z6NAl/6mFKmrFEnBHyMSIdlnjGosulRZMQ6ufZCQpnKx+bSIh01ZFyQjpmJfDaXJ+gIS+CuiAV+djqBN5q55c1z4ScFwmmZXE6BbcAf4i7NYG3VZzfpSMFhaYVnN2KoVTcKq41D2IREsDUlzAsL3L23PCLIs5R8a0yLMNal77nZATrxbc8rWEHYkCf+D+XOH6HZCri5GBz0YGYm6IEzHL19ZRbLgy5GjwlUnkMFqUoOUljrbTeQmothC6LyeZgYVnS6FPqRzIHmSv+uQKZc5Ip6p4UYVNMyA6FlRUvOVjgWj21cEoyOVcKLa6wsg5+Yal7IrHQ8bhWXDuTaiGcVyabinWxpa5vPhxQwR+Ly9WNrCi1r4UdrulnnFjMBA7FNh+q20Ex4XGVGmejLvwWOfJSF35Hxe1pRjvIb+FYjUG6tSr7XE/XotH2yBTHZN6u6hPv12QX12hqJzfoqlumPyq3CR2/7Qp9YQIjWlWrEVJhnJddb6yiI+BdpT1o7CO5LdOpmtgDbgXHVZ3d06DLmDZdye1wizShi6U99TaxDRdrR7z5vANcT/OwDHi9ateHdcVRF652zv9LQtumHvS4gGAvcVWjFC/WlUFFt0/9Tbp6a1UzfNSZU907MZXPhAAQTv9G3r5aar/f6R9o9t37VNfTD2Ummh3iVl9Pr2GaMEcmENKZijqGu9Ti6VVbqVNF1wz9Xq5nWyQbbq0qugXom84/DHi0K9H8tM6/cGz8r/7CUctMrEzeBnyoAmpEYXRcv4f0bJtkc+ueC+B8x78fHcKd4U6+1gAAAABJRU5ErkJggg==">
+            <div>
+              <h2>Snow Removal</h2>
+              <p></p>
+            </div>
+          </div>
+        </div>
+        <button onclick="showDialog()" class="mt-10">Learn more <span>&rarr;</span></button>
+        <div onclick="hideDialog()" id="dialog" class="fixed left-0 top-0 z-50 bg-black bg-opacity-50 w-screen h-screen justify-center items-center opacity-0 hidden transition-opacity duration-500 overflow-y-auto inset-0">
+          <div onclick="event.stopImmediatePropagation()" class="bg-white rounded shadow-md p-8 max-width-96 w-[80%] flex flex-col">
+            <div class="border-b-[1px] flex flex-col pb-5">
+              <img class="m-auto mb-4 h-16 w-16" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAAE3klEQVR4nO2a24vVVRTHP+OoM17IGZ0ms9LulJfpgn9CkQpTGr2UBUGUPdVMPfQQpBARZi/VUPRST5HUS2Z3JEaILK28PNSkU1FeKKx5CJpRx/HEgu+GxZk5v9/e+5wzSfiFwznwW9+192/vtdZea+0DF/D/RQdwJ/ACsBP4ATgJjOljv78H3pdML7CA8wRtwEbgE+AsUEn8GOdj4D7pmna0A08Ax92kTgGDwGZgA7ACWCTZdv1eCdwtmd3Aacc/BvRJdlqwFhh2E/gW2AR0ZujqFPc7p+8IcAdNhK3Uq25AG3xNg3S3aIEOOP2vNMPcLgG+0QCjwONAa6MHAWYC/QoONtZeoLtRyq/UdpviIWBVifx1wDPALuCEfOcfRbGXgGURY94EHNaYhzWHuncivMRXctgie38TmCiJVH8DDwAXlYzdBXztXqa7Hp8I5rQHmF8ge6lWPEz0Ddn8DcBcfSxiPe/C9Jh2yJ7Vwnz3MntzfeY1Z06LShx10EWwpSV6H9S5c0acL0om2OXMbCD1JdY5xy7zibske7LkhauxUmeHcZ8qkb3ZBYDo0DwH+EmkxyLk35KsHZCp6BX31wjZfucvUSb2pDsnYkLsX5K/hnS0aCeNvyQiNB+UrIX/Ugc/nrCF85yD5+Jz6bg9weSPle3K/RK0aBWDKyR/lHzslA4zs5gdDOnMvUWCn0no4chJdLsVykUYMzbdeVTyHxUdaGd1ElttEYNWHYBntFo5COdPT6T8QmXN47XqmfVSaDabgt/Eu4x0zNMinFa0jMXuInN8UQ8tT0rBe+LZeZKK28T9MpG3RTyrNCfhg8wJPSeefafiWXEtVUnBBvGsbJ6EkAbcmKBwhiuyniYdYWWHpSsWK1z6NAl/6mFKmrFEnBHyMSIdlnjGosulRZMQ6ufZCQpnKx+bSIh01ZFyQjpmJfDaXJ+gIS+CuiAV+djqBN5q55c1z4ScFwmmZXE6BbcAf4i7NYG3VZzfpSMFhaYVnN2KoVTcKq41D2IREsDUlzAsL3L23PCLIs5R8a0yLMNal77nZATrxbc8rWEHYkCf+D+XOH6HZCri5GBz0YGYm6IEzHL19ZRbLgy5GjwlUnkMFqUoOUljrbTeQmothC6LyeZgYVnS6FPqRzIHmSv+uQKZc5Ip6p4UYVNMyA6FlRUvOVjgWj21cEoyOVcKLa6wsg5+Yal7IrHQ8bhWXDuTaiGcVyabinWxpa5vPhxQwR+Ly9WNrCi1r4UdrulnnFjMBA7FNh+q20Ex4XGVGmejLvwWOfJSF35Hxe1pRjvIb+FYjUG6tSr7XE/XotH2yBTHZN6u6hPv12QX12hqJzfoqlumPyq3CR2/7Qp9YQIjWlWrEVJhnJddb6yiI+BdpT1o7CO5LdOpmtgDbgXHVZ3d06DLmDZdye1wizShi6U99TaxDRdrR7z5vANcT/OwDHi9ateHdcVRF652zv9LQtumHvS4gGAvcVWjFC/WlUFFt0/9Tbp6a1UzfNSZU907MZXPhAAQTv9G3r5aar/f6R9o9t37VNfTD2Ummh3iVl9Pr2GaMEcmENKZijqGu9Ti6VVbqVNF1wz9Xq5nWyQbbq0qugXom84/DHi0K9H8tM6/cGz8r/7CUctMrEzeBnyoAmpEYXRcv4f0bJtkc+ueC+B8x78fHcKd4U6+1gAAAABJRU5ErkJggg==">
+              <div>
+                <h2>Gardening</h2>
+                <p></p>
+              </div>
+            </div>
+            <div class="border-b-[1px] flex flex-col justify-center py-5">
+              <img class="m-auto mb-4 h-16 w-16" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAAE3klEQVR4nO2a24vVVRTHP+OoM17IGZ0ms9LulJfpgn9CkQpTGr2UBUGUPdVMPfQQpBARZi/VUPRST5HUS2Z3JEaILK28PNSkU1FeKKx5CJpRx/HEgu+GxZk5v9/e+5wzSfiFwznwW9+192/vtdZea+0DF/D/RQdwJ/ACsBP4ATgJjOljv78H3pdML7CA8wRtwEbgE+AsUEn8GOdj4D7pmna0A08Ax92kTgGDwGZgA7ACWCTZdv1eCdwtmd3Aacc/BvRJdlqwFhh2E/gW2AR0ZujqFPc7p+8IcAdNhK3Uq25AG3xNg3S3aIEOOP2vNMPcLgG+0QCjwONAa6MHAWYC/QoONtZeoLtRyq/UdpviIWBVifx1wDPALuCEfOcfRbGXgGURY94EHNaYhzWHuncivMRXctgie38TmCiJVH8DDwAXlYzdBXztXqa7Hp8I5rQHmF8ge6lWPEz0Ddn8DcBcfSxiPe/C9Jh2yJ7Vwnz3MntzfeY1Z06LShx10EWwpSV6H9S5c0acL0om2OXMbCD1JdY5xy7zibske7LkhauxUmeHcZ8qkb3ZBYDo0DwH+EmkxyLk35KsHZCp6BX31wjZfucvUSb2pDsnYkLsX5K/hnS0aCeNvyQiNB+UrIX/Ugc/nrCF85yD5+Jz6bg9weSPle3K/RK0aBWDKyR/lHzslA4zs5gdDOnMvUWCn0no4chJdLsVykUYMzbdeVTyHxUdaGd1ElttEYNWHYBntFo5COdPT6T8QmXN47XqmfVSaDabgt/Eu4x0zNMinFa0jMXuInN8UQ8tT0rBe+LZeZKK28T9MpG3RTyrNCfhg8wJPSeefafiWXEtVUnBBvGsbJ6EkAbcmKBwhiuyniYdYWWHpSsWK1z6NAl/6mFKmrFEnBHyMSIdlnjGosulRZMQ6ufZCQpnKx+bSIh01ZFyQjpmJfDaXJ+gIS+CuiAV+djqBN5q55c1z4ScFwmmZXE6BbcAf4i7NYG3VZzfpSMFhaYVnN2KoVTcKq41D2IREsDUlzAsL3L23PCLIs5R8a0yLMNal77nZATrxbc8rWEHYkCf+D+XOH6HZCri5GBz0YGYm6IEzHL19ZRbLgy5GjwlUnkMFqUoOUljrbTeQmothC6LyeZgYVnS6FPqRzIHmSv+uQKZc5Ip6p4UYVNMyA6FlRUvOVjgWj21cEoyOVcKLa6wsg5+Yal7IrHQ8bhWXDuTaiGcVyabinWxpa5vPhxQwR+Ly9WNrCi1r4UdrulnnFjMBA7FNh+q20Ex4XGVGmejLvwWOfJSF35Hxe1pRjvIb+FYjUG6tSr7XE/XotH2yBTHZN6u6hPv12QX12hqJzfoqlumPyq3CR2/7Qp9YQIjWlWrEVJhnJddb6yiI+BdpT1o7CO5LdOpmtgDbgXHVZ3d06DLmDZdye1wizShi6U99TaxDRdrR7z5vANcT/OwDHi9ateHdcVRF652zv9LQtumHvS4gGAvcVWjFC/WlUFFt0/9Tbp6a1UzfNSZU907MZXPhAAQTv9G3r5aar/f6R9o9t37VNfTD2Ummh3iVl9Pr2GaMEcmENKZijqGu9Ti6VVbqVNF1wz9Xq5nWyQbbq0qugXom84/DHi0K9H8tM6/cGz8r/7CUctMrEzeBnyoAmpEYXRcv4f0bJtkc+ueC+B8x78fHcKd4U6+1gAAAABJRU5ErkJggg==">
+              <div>
+                <h2>Backyard Design</h2>
+                <p></p>
+              </div>
+            </div>
+            <div class="border-b-[1px] flex flex-col justify-center py-5">
+              <img class="m-auto mb-4 h-16 w-16" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAAE3klEQVR4nO2a24vVVRTHP+OoM17IGZ0ms9LulJfpgn9CkQpTGr2UBUGUPdVMPfQQpBARZi/VUPRST5HUS2Z3JEaILK28PNSkU1FeKKx5CJpRx/HEgu+GxZk5v9/e+5wzSfiFwznwW9+192/vtdZea+0DF/D/RQdwJ/ACsBP4ATgJjOljv78H3pdML7CA8wRtwEbgE+AsUEn8GOdj4D7pmna0A08Ax92kTgGDwGZgA7ACWCTZdv1eCdwtmd3Aacc/BvRJdlqwFhh2E/gW2AR0ZujqFPc7p+8IcAdNhK3Uq25AG3xNg3S3aIEOOP2vNMPcLgG+0QCjwONAa6MHAWYC/QoONtZeoLtRyq/UdpviIWBVifx1wDPALuCEfOcfRbGXgGURY94EHNaYhzWHuncivMRXctgie38TmCiJVH8DDwAXlYzdBXztXqa7Hp8I5rQHmF8ge6lWPEz0Ddn8DcBcfSxiPe/C9Jh2yJ7Vwnz3MntzfeY1Z06LShx10EWwpSV6H9S5c0acL0om2OXMbCD1JdY5xy7zibske7LkhauxUmeHcZ8qkb3ZBYDo0DwH+EmkxyLk35KsHZCp6BX31wjZfucvUSb2pDsnYkLsX5K/hnS0aCeNvyQiNB+UrIX/Ugc/nrCF85yD5+Jz6bg9weSPle3K/RK0aBWDKyR/lHzslA4zs5gdDOnMvUWCn0no4chJdLsVykUYMzbdeVTyHxUdaGd1ElttEYNWHYBntFo5COdPT6T8QmXN47XqmfVSaDabgt/Eu4x0zNMinFa0jMXuInN8UQ8tT0rBe+LZeZKK28T9MpG3RTyrNCfhg8wJPSeefafiWXEtVUnBBvGsbJ6EkAbcmKBwhiuyniYdYWWHpSsWK1z6NAl/6mFKmrFEnBHyMSIdlnjGosulRZMQ6ufZCQpnKx+bSIh01ZFyQjpmJfDaXJ+gIS+CuiAV+djqBN5q55c1z4ScFwmmZXE6BbcAf4i7NYG3VZzfpSMFhaYVnN2KoVTcKq41D2IREsDUlzAsL3L23PCLIs5R8a0yLMNal77nZATrxbc8rWEHYkCf+D+XOH6HZCri5GBz0YGYm6IEzHL19ZRbLgy5GjwlUnkMFqUoOUljrbTeQmothC6LyeZgYVnS6FPqRzIHmSv+uQKZc5Ip6p4UYVNMyA6FlRUvOVjgWj21cEoyOVcKLa6wsg5+Yal7IrHQ8bhWXDuTaiGcVyabinWxpa5vPhxQwR+Ly9WNrCi1r4UdrulnnFjMBA7FNh+q20Ex4XGVGmejLvwWOfJSF35Hxe1pRjvIb+FYjUG6tSr7XE/XotH2yBTHZN6u6hPv12QX12hqJzfoqlumPyq3CR2/7Qp9YQIjWlWrEVJhnJddb6yiI+BdpT1o7CO5LdOpmtgDbgXHVZ3d06DLmDZdye1wizShi6U99TaxDRdrR7z5vANcT/OwDHi9ateHdcVRF652zv9LQtumHvS4gGAvcVWjFC/WlUFFt0/9Tbp6a1UzfNSZU907MZXPhAAQTv9G3r5aar/f6R9o9t37VNfTD2Ummh3iVl9Pr2GaMEcmENKZijqGu9Ti6VVbqVNF1wz9Xq5nWyQbbq0qugXom84/DHi0K9H8tM6/cGz8r/7CUctMrEzeBnyoAmpEYXRcv4f0bJtkc+ueC+B8x78fHcKd4U6+1gAAAABJRU5ErkJggg==">
+              <div>
+                <h2>Pavage</h2>
+                <p></p>
+              </div>
+            </div>
+            <div class="flex flex-col justify-center py-5">
+              <img class="m-auto mb-4 h-16 w-16" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAAE3klEQVR4nO2a24vVVRTHP+OoM17IGZ0ms9LulJfpgn9CkQpTGr2UBUGUPdVMPfQQpBARZi/VUPRST5HUS2Z3JEaILK28PNSkU1FeKKx5CJpRx/HEgu+GxZk5v9/e+5wzSfiFwznwW9+192/vtdZea+0DF/D/RQdwJ/ACsBP4ATgJjOljv78H3pdML7CA8wRtwEbgE+AsUEn8GOdj4D7pmna0A08Ax92kTgGDwGZgA7ACWCTZdv1eCdwtmd3Aacc/BvRJdlqwFhh2E/gW2AR0ZujqFPc7p+8IcAdNhK3Uq25AG3xNg3S3aIEOOP2vNMPcLgG+0QCjwONAa6MHAWYC/QoONtZeoLtRyq/UdpviIWBVifx1wDPALuCEfOcfRbGXgGURY94EHNaYhzWHuncivMRXctgie38TmCiJVH8DDwAXlYzdBXztXqa7Hp8I5rQHmF8ge6lWPEz0Ddn8DcBcfSxiPe/C9Jh2yJ7Vwnz3MntzfeY1Z06LShx10EWwpSV6H9S5c0acL0om2OXMbCD1JdY5xy7zibske7LkhauxUmeHcZ8qkb3ZBYDo0DwH+EmkxyLk35KsHZCp6BX31wjZfucvUSb2pDsnYkLsX5K/hnS0aCeNvyQiNB+UrIX/Ugc/nrCF85yD5+Jz6bg9weSPle3K/RK0aBWDKyR/lHzslA4zs5gdDOnMvUWCn0no4chJdLsVykUYMzbdeVTyHxUdaGd1ElttEYNWHYBntFo5COdPT6T8QmXN47XqmfVSaDabgt/Eu4x0zNMinFa0jMXuInN8UQ8tT0rBe+LZeZKK28T9MpG3RTyrNCfhg8wJPSeefafiWXEtVUnBBvGsbJ6EkAbcmKBwhiuyniYdYWWHpSsWK1z6NAl/6mFKmrFEnBHyMSIdlnjGosulRZMQ6ufZCQpnKx+bSIh01ZFyQjpmJfDaXJ+gIS+CuiAV+djqBN5q55c1z4ScFwmmZXE6BbcAf4i7NYG3VZzfpSMFhaYVnN2KoVTcKq41D2IREsDUlzAsL3L23PCLIs5R8a0yLMNal77nZATrxbc8rWEHYkCf+D+XOH6HZCri5GBz0YGYm6IEzHL19ZRbLgy5GjwlUnkMFqUoOUljrbTeQmothC6LyeZgYVnS6FPqRzIHmSv+uQKZc5Ip6p4UYVNMyA6FlRUvOVjgWj21cEoyOVcKLa6wsg5+Yal7IrHQ8bhWXDuTaiGcVyabinWxpa5vPhxQwR+Ly9WNrCi1r4UdrulnnFjMBA7FNh+q20Ex4XGVGmejLvwWOfJSF35Hxe1pRjvIb+FYjUG6tSr7XE/XotH2yBTHZN6u6hPv12QX12hqJzfoqlumPyq3CR2/7Qp9YQIjWlWrEVJhnJddb6yiI+BdpT1o7CO5LdOpmtgDbgXHVZ3d06DLmDZdye1wizShi6U99TaxDRdrR7z5vANcT/OwDHi9ateHdcVRF652zv9LQtumHvS4gGAvcVWjFC/WlUFFt0/9Tbp6a1UzfNSZU907MZXPhAAQTv9G3r5aar/f6R9o9t37VNfTD2Ummh3iVl9Pr2GaMEcmENKZijqGu9Ti6VVbqVNF1wz9Xq5nWyQbbq0qugXom84/DHi0K9H8tM6/cGz8r/7CUctMrEzeBnyoAmpEYXRcv4f0bJtkc+ueC+B8x78fHcKd4U6+1gAAAABJRU5ErkJggg==">
+              <div>
+                <h2>Bush Trimming & Pruning</h2>
+                <p></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="contact-us px-5 py-20 bg-gradient-to-b from-slate-100 to-slate-50 landscape-lg:h-dvh" id="contact-us">
+      <div class="sm:container text-center">
+        <h1>Contact Us</h1>
+        <div class="mx-auto">
+          <form action="https://formsubmit.co/DimaSpat12554@gmail.com" method="POST" class="grid sm:grid-cols-6 grid-cols-1 gap-5 lands">
+            <input class="sm:col-span-2 col-span-1" type="text" placeholder="First name" name="first name" required>
+            <input class="sm:col-span-2 row-span-1 col-span-1" type="text" placeholder="Last name" name="last name" required>
+            <input class="sm:col-span-2 col-span-1 row-span-1" type="number" placeholder="Phone number" name="number" required>
+            <input class="sm:col-span-6 col-span-1 row-span-1" type="email" placeholder="Email address" name="email">
+            <input class="sm:col-span-3 row-span-1 col-span-1" type="text" placeholder="Address" name="address" required>
+            <input class="sm:col-span-3 row-span-1 col-span-1" type="text" placeholder="Postal Code" name="postal code" required>
+            <textarea class="sm:col-span-6 col-span-1 resize-none" name="moreInfo" cols="30" rows="10" placeholder="Additionnal information"></textarea>
+            <input type="submit" value="Contact Us" class="lg:col-span-4 lg:col-start-2 sm:col-span-6 col-span-1 sm:mt-10 invert z-20">
+          </form>
+        </div>
+      </div>
+    </div>
+
+
+    <footer class="bg-gradient-to-b from-slate-50 to-white">
+      <div class="sm:container px-5 py-20 sm:gap-x-16 sm:gap-y-32 gap-y-8 grid sm:grid-cols-3 sm:grid-rows-none grid-rows-4 h-full border-y-2 sm: sm:max-h-fit max-h-dvh snap-end">
+        <div>
+          <h2>Company</h2>
+          <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Non eaque, alias ad quia obcaecati, aut voluptates expedita, velit maiores debitis tempore recusandae quod repellat aliquid nesciunt iure magni unde molestiae?</p>
+        </div>
+        <div class="text-center sm:flex sm:flex-col sm:justify-between">
+          <div class="sm:h-1/2 h-full">
+            <h2>Overview</h2>
+            <ul>
+              <li><a href="#">About</a></li>
+              <li><a href="#">Services</a></li>
+              <li><a href="#">Contact-Us</a></li>
+            </ul>
+          </div>
+          <div class="sm:block sm:h-1/2 hidden">
+            <h2>Get in touch</h2>
+            <p>9370, rue de Brome, Lasalle, Montreal, Quebec, H8R2H5</p>
+            <p>514 578 5074</p>
+            <div class="flex justify-center">
+              <a href="#" class="icon-facebook">
+                <img src="Images/icon-facebook.svg" alt="Facebook"/>
+              </a>
+              <a href="#" class="icon-instagram">
+                <img src="Images/icon-instagram.svg" alt="Instagram">
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="">
+          <h2>Services</h2>
+          fence
+          pavavge
+          gardening
+          design
+          lawn mowing
+          felling of trees
+          decking & pergola
+        </div>
+        <div class="block sm:hidden text-center">
+          <h2>Get in touch</h2>
+          <p>9370, rue de Brome, Lasalle, Montreal, Quebec, H8R2H5</p>
+          <p>514 578 5074</p>
+          <div class="flex justify-center">
+            <a href="#" class="icon-facebook">
+              <img src="Images/icon-facebook.svg" alt="Facebook"/>
+            </a>
+            <a href="#" class="icon-instagram">
+              <img src="Images/icon-instagram.svg" alt="Instagram">
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="py-4 sm:container px-5" id="copyrights">
+        <div class="max-h-12 flex justify-center align-middle">
+          <div><p>&copy;Dixes Templates</p></div>
+        </div>
+      </div>
+    </footer>
+
+
+
+
+    <script src="script.js"></script>
+  </body>
+</html>
